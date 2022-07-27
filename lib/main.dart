@@ -1,14 +1,83 @@
+import 'package:catelog_app/pages/login_page.dart';
 import 'package:flutter/material.dart';
-import 'home_page.dart';
-void  main() {
+import 'pages/home_page.dart';
+
+void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({ Key? key }) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    return MaterialApp(
+      themeMode: ThemeMode.light,
+      theme: ThemeData(primarySwatch: Colors.green),
+      darkTheme: ThemeData(
+        brightness: Brightness.light,
+      ),
+      initialRoute: "/home",
+      routes: {
+        "/": (context) => const LoginPage(),
+        "/home": (context) => const HomePage(),
+        "/login": (context) => const LoginPage()
+      },
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // in int(integer we store data like  20 30 23 2324)
     // int days = 30;
     // in str(string we store data like words sentences etc.)
@@ -26,8 +95,3 @@ class MyApp extends StatelessWidget {
     // const pi  = 3.14;
     // // in final we can change the data
     // final add = num + int;
-    return const MaterialApp(
-      home: HomePage(),
-    );
-  }
-}

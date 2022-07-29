@@ -1,3 +1,4 @@
+import 'package:catelog_app/utils/routes.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -7,56 +8,60 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
         color: Colors.white,
-        child: Column(
-          children: [
-            Image.asset(
-              "assets/images/login_image.png",
-              fit: BoxFit.cover,
-            ),
-            const SizedBox(
-              height: 20.0,
-            ),
-            const Text(
-              "Wellcome",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(
-              height: 20.0,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                vertical: 16.0,
-                horizontal: 32.0,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Image.asset(
+                "assets/images/login_image.png",
+                fit: BoxFit.cover,
               ),
-              child: Column(
-                children: [
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      hintText: "Enter User Name",
-                      labelText: "Enter User Name",
-                    ),
-                  ),
-                  TextFormField(
-                    obscureText: true,
-                    decoration: const InputDecoration(
-                      hintText: "Enter Password",
-                      labelText: "Password",
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 20.0,
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      print("hii");
-                    },
-                    child: const Text("Login"),
-                    style: TextButton.styleFrom(),
-                  ),
-                ],
+              const SizedBox(
+                height: 20.0,
               ),
-            ),
-          ],
+              const Text(
+                "Wellcome",
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 16.0,
+                  horizontal: 32.0,
+                ),
+                child: Column(
+                  children: [
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        hintText: "Enter User Name",
+                        labelText: "Enter User Name",
+                      ),
+                    ),
+                    TextFormField(
+                      obscureText: true,
+                      decoration: const InputDecoration(
+                        hintText: "Enter Password",
+                        labelText: "Password",
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 40.0,
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, MyRoutes.homeRoutes);
+                      },
+                      child: const Text("Login"),
+                      style: TextButton.styleFrom(
+                        minimumSize: const Size(260, 40),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ));
   }
 }

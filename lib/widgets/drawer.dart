@@ -22,8 +22,12 @@ class MyDrawer extends StatelessWidget {
                 decoration: const BoxDecoration(color: Colors.white),
                 accountName: const Text(
                   "MD",
+                  style: TextStyle(color: Colors.black),
                 ),
-                accountEmail: const Text("csdafc@gmail.com"),
+                accountEmail: const Text(
+                  "flutter@gmail.com",
+                  style: TextStyle(color: Colors.black),
+                ),
                 currentAccountPicture: CircleAvatar(
                   backgroundImage: NetworkImage(imageurl),
                 ),
@@ -57,4 +61,3 @@ class MyDrawer extends StatelessWidget {
     );
   }
 }
-
